@@ -1,0 +1,18 @@
+.dates_poll {
+	display: none;
+}
+#schedule_wrapper {
+    width: 360px;
+    height: 360px;
+}
+
+#schedule_wrapper .forms input[type='text'],
+#schedule_wrapper .forms input[type='submit']{
+    margin: 0;
+    width: 100%;
+    font-size: 18px;
+    box-shadow: 0 0 5px 1px #969696;
+}
+#schedule_wrapper .forms input[type='checkbox']{
+    /* please input checkbox style code here */
+}
