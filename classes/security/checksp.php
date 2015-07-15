@@ -6,6 +6,8 @@
  * Time: 16:28
  */
 
+namespace Lapdoodle;
+
 class security_checksp {
 
     public function CheckPostSession($parameter) {

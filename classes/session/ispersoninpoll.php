@@ -6,6 +6,8 @@
  * Time: 14:15
  */
 
+namespace Lapdoodle;
+
 class session_ispersoninpoll {
 
     function isInPoll($data, $user) {

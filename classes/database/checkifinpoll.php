@@ -1,4 +1,7 @@
 <?php
+
+namespace Lapdoodle;
+
 class database_checkifinpoll{
 	function inPoll($email, $poll_id, $db){
 		$query="SELECT * FROM $poll_id WHERE email='$email'";

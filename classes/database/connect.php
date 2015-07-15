@@ -1,4 +1,8 @@
 <?php
+
+namespace Lapdoodle;
+use \mysqli;
+
 include_once(FOLDER."/constants.php");
 class database_connect
 {

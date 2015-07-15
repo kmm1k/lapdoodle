@@ -6,6 +6,8 @@
  * Time: 12:30
  */
 
+namespace Lapdoodle;
+
 class errors_collector {
 
     private static $arr;

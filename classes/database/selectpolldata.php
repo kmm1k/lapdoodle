@@ -6,6 +6,8 @@
  * Time: 19:19
  */
 
+namespace Lapdoodle;
+
 class database_selectpolldata {
 
     public function selectPollData() {

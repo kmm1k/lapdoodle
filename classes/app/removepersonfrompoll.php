@@ -5,6 +5,9 @@
  * Date: 05.07.2015
  * Time: 16:15
  */
+
+namespace Lapdoodle;
+
 class app_removepersonfrompoll {
 
     public function __construct() {

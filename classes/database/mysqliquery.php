@@ -6,6 +6,8 @@
  * Time: 13:57
  */
 
+namespace Lapdoodle;
+
 class database_mysqliquery {
     function getData($query) {
         if ($poll = app_controller::$db->query($query)) {

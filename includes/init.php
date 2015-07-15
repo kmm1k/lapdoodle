@@ -6,9 +6,12 @@
 * Time: 12:16
 */
 
+use Lapdoodle\app_controller;
+
 /* autoload model classes */
 function __autoload($class_name) {
-    $filename = str_replace('_', DIRECTORY_SEPARATOR, $class_name).'.php';
+    $filename = str_replace('_', DIRECTORY_SEPARATOR, $class_name);
+    $filename = str_replace('Lapdoodle\\', "", $filename).'.php';
     $file = CLASSES ."/". $filename;
 
     if (file_exists($file) == false)
@@ -23,7 +26,7 @@ function __autoload($class_name) {
 include CLASSES . '/app/' . 'Registry.php';
 
 /* include the controller class */
-$controller = new app_controller();
+new app_controller();
 
 
 

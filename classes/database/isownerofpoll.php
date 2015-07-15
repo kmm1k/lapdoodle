@@ -6,6 +6,9 @@
  * Time: 11:58
  */
 
+
+namespace Lapdoodle;
+
 class database_isownerofpoll {
 
     public function __construct() {

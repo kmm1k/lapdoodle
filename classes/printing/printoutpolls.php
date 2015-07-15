@@ -5,9 +5,13 @@
  * Date: 05.07.2015
  * Time: 12:47
  */
+
+namespace Lapdoodle;
+
 class printing_printoutpolls {
 
     function printPoll($data) {
+        echo "polls: <br/>";
         if ($data->num_rows > 0) {
             while ($row = $data->fetch_assoc()) {
                 $table_id = app_controller::$strcln->pr($row['table_id']);

@@ -6,6 +6,8 @@
  * Time: 13:24
  */
 
+namespace Lapdoodle;
+
 class printing_printpollparts {
 
     function printDatesWithInput($strcln, $poll, $users) {

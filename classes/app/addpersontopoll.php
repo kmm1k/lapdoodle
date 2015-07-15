@@ -5,6 +5,9 @@
  * Date: 05.07.2015
  * Time: 16:24
  */
+
+namespace Lapdoodle;
+
 class app_addpersontopoll {
 
     private $doQuery;

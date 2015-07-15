@@ -1,4 +1,7 @@
 <?php
+
+namespace Lapdoodle;
+
 class security_sqlinj {
 
 	public function esc($string) {

@@ -6,6 +6,8 @@
  * Time: 19:11
  */
 
+namespace Lapdoodle;
+
 class app_deletepoll {
     public function __construct($poll_url) {
         $query = "DROP TABLE $poll_url";

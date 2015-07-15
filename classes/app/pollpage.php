@@ -6,12 +6,14 @@
  * Time: 15:40
  */
 
+namespace Lapdoodle;
+
 class app_pollpage {
 
     private $usersInPoll;
 
     public function __construct() {
-        $backbutton = new printing_printbackbutton();
+        new printing_printbackbutton();
         //echo app_controller::$poll_id.' pollpage.php';
         $pollDataGetter = new database_selectpolldata();
         $poll = $pollDataGetter->selectPollData();
@@ -20,25 +22,11 @@ class app_pollpage {
         $isAdminOfPoll = new security_isuseradmin();
         if($isOwnerOfPoll->checkOwner($poll['email']) ||
             $isAdminOfPoll->isAdmin()) {
-            $this->printDeleteButton();
+            new printing_printdeletebutton();
         }
         $this->selectPoll();
-        $heading = app_controller::$strcln->pr($poll['table_id']);
-        $name = app_controller::$strcln->pr($poll['name']);
-        echo '<p>event name:'.$heading.'</p>
-            <p>made by:'.$name.'</p>';
+        new printing_printpollinfo($poll);
         $this->isPersonInPoll($poll, $with_dates);
-    }
-
-    private function printDeleteButton() {
-        ?>
-        <form id="remove_poll_button" class="forms" action="" method="post">
-            <input type="submit" value="delete this poll" >
-            <input type="hidden" name="poll_id" value ="<?php echo app_controller::$poll_id; ?>">
-            <input type="hidden" name="post_type" value="delete_poll">
-            <input type="hidden" name="del_poll" value="1">
-        </form>
-        <?php
     }
     private function selectPoll() {
         $poll_id = app_controller::$poll_id;
@@ -54,36 +42,7 @@ class app_pollpage {
         $user = $_SESSION[SESSION_EMAIL];
         $isInPoll = $isPersonInPoll->isInPoll($this->usersInPoll, $user);
         $this->usersInPoll->data_seek(0);
-        $this->printAddToPollButton($isInPoll, $poll, $with_dates);
+        new printing_printaddtopollbutton($isInPoll, $poll, $with_dates, $this->usersInPoll);
     }
-    private function printAddToPollButton($isInPoll, $poll, $with_dates) {
-        $pollPrinter = new printing_printpollparts();
-        if ( !$isInPoll ) {
-            ?>
-            <br/>
-            <form id="add_to_poll_button" class="forms" action="" method="post">
-            <?php
-            if ($with_dates == 1) {
-                echo "dates to choose: <br/>";
-                $pollPrinter->printDatesWithInput(app_controller::$strcln, $poll,
-                    $this->usersInPoll);
-                $this->usersInPoll->data_seek(0);
-            }
-            ?>
-            <input id="dates" type="hidden" name="dates" value="">
-            <input type="submit" value="add me to poll" >
-            <input type="hidden" name="poll_id" value ="<?php echo app_controller::$poll_id; ?>">
-            <input type="hidden" name="post_type" value="add">
-            </form>
-            <?php
-        } else {
-            echo "you are in poll <br/>";
-            if ($with_dates == 1) {
-                $pollPrinter->printDates(app_controller::$strcln, $poll, $this->$usersInPoll);
-            }
-            include_once(FOLDER . "/page_parts/remove_from_poll_button.php");
-        }
-    }
-
 
 }

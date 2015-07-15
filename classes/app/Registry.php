@@ -6,6 +6,8 @@
  * Time: 12:18
  */
 
+namespace Lapdoodle;
+
 Class Registry {
 
     private $vars = array();

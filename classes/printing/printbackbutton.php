@@ -6,6 +6,8 @@
  * Time: 9:42
  */
 
+namespace Lapdoodle;
+
 class printing_printbackbutton {
 
     public function __construct() {

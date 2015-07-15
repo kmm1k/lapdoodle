@@ -5,6 +5,9 @@
  * Date: 08.07.2015
  * Time: 12:17
  */
+
+namespace Lapdoodle;
+
 class app_controller {
 
     public static $db;
@@ -13,7 +16,7 @@ class app_controller {
     public static $err;
 
     public function __construct() {
-        $err = new errors_collector();
+        app_controller::$err = new errors_collector();
         $connection = new database_connect();
         app_controller::$db = $connection->getDb();
         app_controller::$strcln = new security_sqlinj();
@@ -35,12 +38,10 @@ class app_controller {
         echo app_controller::$poll_id;
         if(isset(app_controller::$poll_id) && isset($_SESSION[SESSION_EMAIL])
             && app_controller::$poll_id != null){
-            $appPollPage = new app_pollpage();
+            new app_pollpage();
         }else{
-            //leht kui poll_id pole
-            echo "polls: <br/>";
             $pollPrinter->printPoll($pollsData);
-            include_once(FOLDER . "/page_parts/nopoll.php");
+            new printing_pollform();
         }
     }
 
@@ -58,7 +59,7 @@ class app_controller {
             $isAdminOfPoll = new security_isuseradmin();
             if($isOwnerOfPoll->checkOwner($poll['email'])||
                 $isAdminOfPoll->isAdmin()) {
-                $deletepoll = new app_deletepoll($poll['url']);
+                new app_deletepoll($poll['url']);
                 app_controller::$poll_id = null;
             }
         }
@@ -67,9 +68,9 @@ class app_controller {
     private function getPostPollId() {
         if (isset($_POST['post_type'])) {
             if ($_POST['post_type'] == "delete") {
-                $removeFromPoll = new app_removepersonfrompoll();
+                new app_removepersonfrompoll();
             } else if ($_POST['post_type'] == "add") {
-                $addPersonToPoll = new app_addpersontopoll();
+                new app_addpersontopoll();
             } else if ($_POST['post_type'] == "delete_poll") {
                 $this->deletePoll();
             }

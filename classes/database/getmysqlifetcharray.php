@@ -6,6 +6,8 @@
  * Time: 13:02
  */
 
+namespace Lapdoodle;
+
 class database_getmysqlifetcharray {
 
     function getData($query) {

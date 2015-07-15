@@ -6,6 +6,8 @@
  * Time: 14:14
  */
 
+namespace Lapdoodle;
+
 class security_isuseradmin {
 
     public function isAdmin() {

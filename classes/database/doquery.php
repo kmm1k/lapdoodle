@@ -6,6 +6,8 @@
  * Time: 16:51
  */
 
+namespace Lapdoodle;
+
 class database_doquery {
 
     //only in php 5.6
