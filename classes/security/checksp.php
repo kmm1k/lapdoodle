@@ -15,11 +15,11 @@ class security_checksp {
             if (isset($_POST[$parameter]) && $_POST[$parameter]!="") {
                 return true;
             } else {
-                echo "here is a problem";
+                app_controller::$err->add('no_'.$parameter.'_input');
                 return false;
             }
         } else {
-            echo "here is a problem sess";
+            app_controller::$err->add('no_session');
             return false;
         }
     }

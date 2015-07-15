@@ -25,6 +25,10 @@ class app_pollpage {
             new printing_printdeletebutton();
         }
         $this->selectPoll();
+        if (!$this->usersInPoll) {
+            app_controller::$err->add('no_poll');
+            return;
+        }
         new printing_printpollinfo($poll);
         $this->isPersonInPoll($poll, $with_dates);
     }
@@ -34,6 +38,9 @@ class app_pollpage {
         $participantPrinter = new printing_printpollparticipants();
         $query = "SELECT * FROM $poll_id";
         $this->usersInPoll = $mySqliQuery->getData($query);
+        if (!$this->usersInPoll) {
+            return;
+        }
         $participantPrinter->printParticipants(app_controller::$strcln,  $this->usersInPoll);
         $this->usersInPoll->data_seek(0);
     }

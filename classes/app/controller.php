@@ -23,7 +23,10 @@ class app_controller {
         $pollGetter = new database_getpolls();
         $pollsData = $pollGetter->queryPolls(app_controller::$db);
 
-        if (!$pollsData) exit("mysql could not get polls");
+        if (!$pollsData) {
+			app_controller::$err->add('could_not_get_poll_data');
+            return;
+		}
         $pollPrinter = new printing_printoutpolls();
 
         if (isset($_POST['make_poll'])) {
@@ -43,6 +46,7 @@ class app_controller {
             $pollPrinter->printPoll($pollsData);
             new printing_pollform();
         }
+        print_r(app_controller::$err->getErrors());
     }
 
     private function makeNewPoll() {
@@ -74,7 +78,11 @@ class app_controller {
             } else if ($_POST['post_type'] == "delete_poll") {
                 $this->deletePoll();
             }
-            if(app_controller::$poll_id == null) return;
+            if (app_controller::$poll_id == null && $_POST['post_type'] == "delete") {
+
+            } else if(app_controller::$poll_id == null) {
+                return;
+            }
         }
         app_controller::$poll_id = app_controller::$strcln->esc($_POST['poll_id']);
 

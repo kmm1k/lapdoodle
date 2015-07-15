@@ -10,7 +10,7 @@ namespace Lapdoodle;
 
 class errors_collector {
 
-    private static $arr;
+    private static $arr = array();
 
     public function __construct() {
 
@@ -21,19 +21,19 @@ class errors_collector {
     }
 
     public function add($id) {
-        array_push($this->arr, $id);
+        array_push(errors_collector::$arr, $id);
+        //$this->translate();
     }
 
-    public function translate($array) {
+    public function translate() {
         /* TODO: Switch to translate error ids */
-        foreach ($array as $error) {
+        foreach (errors_collector::$arr as $error) {
             echo $error;
             $data = explode('_', $error);
             print_r($data);
-            exit();
         }
     }
-
-    public function printErrors() {
+    public function getErrors() {
+        return errors_collector::$arr;
     }
 }

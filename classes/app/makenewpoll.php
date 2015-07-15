@@ -33,7 +33,10 @@ class app_makenewpoll {
 
     private function parseDateOptions($withDates) {
         $this->fineDates = "";
-        if (empty($_POST['doodle_dates'])) app_controller::$err->add('post_empty_doodleDates');
+        if (empty($_POST['doodle_dates'])) {
+            app_controller::$err->add('post_empty_doodleDates');
+            return;
+        }
         $date_string = app_controller::$strcln->esc($_POST['doodle_dates']);
         //exit($date_string);
         $date_array = explode(",", $date_string);
@@ -43,7 +46,10 @@ class app_makenewpoll {
         $date_array_counter = 0;
         foreach ($date_array as $date){
             $date_array_counter++;
-            if (!($parsed_date = date_parse($date))) exit("date parser failed");
+            if (!($parsed_date = date_parse($date))) {
+				app_controller::$err->add('date_parser_failed');
+				return;
+			}
             $this->fineDates .= $parsed_date['day']."."
                 .$parsed_date['month']."."
                 .$parsed_date['year'];

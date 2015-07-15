@@ -14,6 +14,8 @@ class database_mysqliquery {
             return $poll;
         } else {
             //exit("mysql query failed getData");
+			app_controller::$err->add('mysql_failed_to_get_data');
+            return;
         }
     }
 }

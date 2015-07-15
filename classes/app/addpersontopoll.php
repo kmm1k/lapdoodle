@@ -30,7 +30,8 @@ class app_addpersontopoll {
         $name = app_controller::$strcln->esc($_SESSION[SESSION_NAME]);
         $poll_id = app_controller::$poll_id;
         if ($this->checkifinpoll->inPoll($email, $poll_id, app_controller::$db)===true) {
-            exit("already in poll");
+            app_controller::$err->add('already_in_poll');
+            return;
         } else {
             $query = "insert into $poll_id (name, email, dates) values ('$name', '$email', '$dates');";
             $this->doQuery->tryQuery($query);

@@ -54,8 +54,9 @@ function remove_item(date) {
 		}
 	}
 }
-/*
-$("#go_back_to_polls, #remove_poll_button, #remove_from_poll_button, #add_to_poll_button, #make_new_poll_button, .change_poll_button").submit(function(event) {
+
+/**
+$(".forms").submit(function(event) {
     event.preventDefault();
     var values = $(this).serialize();
     $.ajax({
@@ -71,4 +72,4 @@ $("#go_back_to_polls, #remove_poll_button, #remove_from_poll_button, #add_to_pol
         }
     });
 });
-*/
+ */

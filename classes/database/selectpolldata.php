@@ -21,7 +21,8 @@ class database_selectpolldata {
         $query  = "SELECT * FROM tables WHERE url='$poll_id'";
         $poll = $getMysqliArray->getData($query);
         if (!$poll) {
-            exit ("no such poll");
+			app_controller::$err->add('no_such_poll_with_that_code');
+            return;
         }
         return $poll;
 
