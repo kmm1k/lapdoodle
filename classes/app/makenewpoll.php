@@ -68,18 +68,13 @@ class app_makenewpoll {
         $url = $this->makeUrl();
         $withDates = app_controller::$strcln->esc($withDates);
         $fineDates = app_controller::$strcln->esc($this->fineDates);
-        $create_table = "CREATE TABLE $url (
-                        id INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-                        name VARCHAR(60) NOT NULL,
-                        email VARCHAR(60),
-                        reg_date TIMESTAMP,
-                        dates TEXT
-                        )";
+        $pollStructure = Array();
+        $sPollStructure = serialize($pollStructure);
         $query = "insert into tables (table_id, email,
-             name, url, with_dates, dates) values
-             ('$pollname', '$email', '$name', '$url', '$withDates', '$fineDates');";
+             name, url, with_dates, dates, poll) values
+             ('$pollname', '$email', '$name', '$url', '$withDates', '$fineDates', '$sPollStructure');";
 
-        $this->doQuery->tryQuery($query, $create_table);
+        $this->doQuery->tryQuery($query);
     }
 
     private function makeUrl() {

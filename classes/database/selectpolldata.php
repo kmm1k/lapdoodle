@@ -10,8 +10,12 @@ namespace Lapdoodle;
 
 class database_selectpolldata {
 
-    public function selectPollData() {
-        $poll_id = app_controller::$poll_id;
+    public function selectPollData($parameterPollId = null) {
+        if ($parameterPollId == null) {
+            $poll_id = app_controller::$poll_id;
+        } else {
+            $poll_id = $parameterPollId;
+        }
         $poll = $this->selectPollDataParam($poll_id);
         return $poll;
 

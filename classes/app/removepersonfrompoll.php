@@ -21,7 +21,18 @@ class app_removepersonfrompoll {
     private function remove($doQuery) {
         $poll_id = app_controller::$strcln->esc($_POST['poll_id']);
         $email = app_controller::$strcln->esc($_SESSION[SESSION_EMAIL]);
-        $query="DELETE FROM $poll_id WHERE email='$email'";
+        $pollDataGetter = new database_selectpolldata();
+        $poll = $pollDataGetter->selectPollData($poll_id);
+        if (!$poll) return;
+        $pollData = unserialize($poll['poll']);
+        foreach ($pollData as $user) {
+            if ($user['email'] == $email) {
+                unset($pollData[$email]);
+                break;
+            }
+        }
+        $sPollData = serialize($pollData);
+        $query = "UPDATE tables SET poll='$sPollData'";
         $doQuery->tryQuery($query);
     }
 

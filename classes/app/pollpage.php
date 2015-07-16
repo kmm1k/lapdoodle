@@ -17,6 +17,9 @@ class app_pollpage {
         //echo app_controller::$poll_id.' pollpage.php';
         $pollDataGetter = new database_selectpolldata();
         $poll = $pollDataGetter->selectPollData();
+        if (!$poll) {
+            return;
+        }
         $with_dates = $poll['with_dates'];
         $isOwnerOfPoll = new database_isownerofpoll();
         $isAdminOfPoll = new security_isuseradmin();
@@ -24,32 +27,37 @@ class app_pollpage {
             $isAdminOfPoll->isAdmin()) {
             new printing_printdeletebutton();
         }
-        $this->selectPoll();
-        if (!$this->usersInPoll) {
-            app_controller::$err->add('no_poll');
-            return;
-        }
+        $this->selectPollUsers($poll);
         new printing_printpollinfo($poll);
-        $this->isPersonInPoll($poll, $with_dates);
+        $this->isPersonInPoll($with_dates, $poll);
     }
-    private function selectPoll() {
-        $poll_id = app_controller::$poll_id;
-        $mySqliQuery = new database_mysqliquery();
-        $participantPrinter = new printing_printpollparticipants();
-        $query = "SELECT * FROM $poll_id";
-        $this->usersInPoll = $mySqliQuery->getData($query);
-        if (!$this->usersInPoll) {
-            return;
-        }
-        $participantPrinter->printParticipants(app_controller::$strcln,  $this->usersInPoll);
-        $this->usersInPoll->data_seek(0);
+    private function selectPollUsers($poll) {
+        $this->usersInPoll = unserialize($poll['poll']);
     }
-    private function isPersonInPoll($poll, $with_dates) {
+    private function isPersonInPoll($with_dates, $poll) {
         $isPersonInPoll = new session_ispersoninpoll();
         $user = $_SESSION[SESSION_EMAIL];
         $isInPoll = $isPersonInPoll->isInPoll($this->usersInPoll, $user);
-        $this->usersInPoll->data_seek(0);
-        new printing_printaddtopollbutton($isInPoll, $poll, $with_dates, $this->usersInPoll);
+//new printing_printaddtopollbutton($isInPoll, $poll, $with_dates, $this->usersInPoll);
+        $pollPrinter = new printing_printpollparts($poll);
+        if ($isInPoll) {
+            if ($with_dates != 1) {
+                /** print users who are in poll without dates poll */
+                $pollPrinter->printPoll($poll);
+            } else {
+                /** print users who are in poll with dates poll */
+                $pollPrinter->printPollWithDates($poll);
+            }
+            new printing_removefrompollbutton();
+        } else {
+            if ($with_dates != 1) {
+                $pollPrinter->printPoll($poll);
+                new printing_printaddtopollbutton();
+            } else {
+                //exit(print_r($this->usersInPoll));
+                new printing_printaddtopollbutton($poll);
+            }
+        }
     }
 
 }

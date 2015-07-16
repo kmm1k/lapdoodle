@@ -10,50 +10,102 @@ namespace Lapdoodle;
 
 class printing_printpollparts {
 
-    function printDatesWithInput($strcln, $poll, $users) {
-        $dates = explode(",", $poll['dates']);
-        $number = 0;
-        foreach ($dates as $date) {
-            $number++;
-            $date = $strcln->pr($date);
-            echo $date.'<input added_date="'
-                .$date
-                .'" class="joining-image" type="checkbox" value="'
-                .$date.'"><br/>';
-            $this->printJoinedUser($strcln, $users, $date);
-        }
+
+    function printDatesWithInput($poll) {
+        $this->printPollWithDates($poll, TRUE);
     }
 
-    function printDates($strcln, $poll, $users) {
+    function printPollWithDates($poll, $withInput = FALSE) {
+        ?>
+        <table>
+        <?php
         $dates = explode(",", $poll['dates']);
+        $this->printJoinedUsers($poll);
         $number = 0;
+        ?>
+        <?php
         foreach ($dates as $date) {
             $number++;
-            $date = $strcln->pr($date);
-            echo $date.'<br/>';
-            $this->printJoinedUser($strcln, $users, $date);
-        }
-    }
-
-    function printJoinedUser($strcln, $users, $date) {
-        if ($users->num_rows > 0) {
-            while ($row = $users->fetch_assoc()) {
-                if ($this->isPersonInThisDate($date, $row['dates'])) {
-                    echo $strcln->pr($row['name'])." has joined <br/>";
+            $date = app_controller::$strcln->pr($date);
+            ?>
+            <tr>
+                <td>
+                    <?php
+                    echo $date;
+                    if ($withInput) {
+                        ?>
+                        <input added_date="<?php echo $date; ?>"
+                               class="joining-image" type="checkbox"
+                               value="<?php echo $date; ?>">
+                        <?php
+                    }
+                    ?>
+                    <br/>
+                </td>
+                <td>
+                <?php
+                $uPollData = unserialize($poll['poll']);
+                foreach ($uPollData as $data) {
+                    foreach ($data[0] as $joinedDate) {
+                        if ($joinedDate == $date){
+                            echo "v";
+                        }
+                    }
                 }
+                ?>
+                </td>
+            </tr>
+            <?php
             }
-        }
-        $users->data_seek(0);
+            ?>
+        </table>
+    <?php
     }
 
-    function isPersonInThisDate($date, $dates) {
-        $dates = explode(",", $dates);
-        foreach ($dates as $userDate) {
-            if ($date == $userDate){
-                return TRUE;
+
+    function printJoinedUsers($poll) {
+        $uPollData = unserialize($poll['poll']);
+        if (count($uPollData) > 0) {
+            ?>
+            <tr>
+                <td> dates: </td>
+            <?php
+            foreach ($uPollData as $user) {
+                ?>
+                <td>
+                    <?php
+                    echo $user['name'];
+                    ?>
+                </td>
+                <?php
             }
+            ?>
+            </tr>
+            <?php
         }
-        return FALSE;
     }
+
+    function printPoll($poll) {
+        $uPollData = unserialize($poll['poll']);
+        ?>
+        <table>
+            <th>people joined:</th>
+            <?php
+            foreach ($uPollData as $user) {
+                ?>
+                <tr>
+                    <td>
+                    <?php
+                    echo $user['name'];
+                    ?>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
+        <?php
+    }
+
 
 }

@@ -10,10 +10,11 @@ namespace Lapdoodle;
 
 class session_ispersoninpoll {
 
-    function isInPoll($data, $user) {
-        if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-                if ($user === $row["email"]) return TRUE;
+    function isInPoll($data, $creds) {
+        $count = count($data);
+        if ($count > 0) {
+            foreach ($data as $user) {
+                if ($user['email'] === $creds) return TRUE;
             }
         } else {
             return FALSE;
