@@ -41,7 +41,7 @@ class app_pollpage {
 //new printing_printaddtopollbutton($isInPoll, $poll, $with_dates, $this->usersInPoll);
         $pollPrinter = new printing_printpollparts($poll);
         if ($isInPoll) {
-            if ($with_dates != 1) {
+            if ($with_dates == 0) {
                 /** print users who are in poll without dates poll */
                 $pollPrinter->printPoll($poll);
             } else {
@@ -50,7 +50,7 @@ class app_pollpage {
             }
             new printing_removefrompollbutton();
         } else {
-            if ($with_dates != 1) {
+            if ($with_dates == 0) {
                 $pollPrinter->printPoll($poll);
                 new printing_printaddtopollbutton();
             } else {

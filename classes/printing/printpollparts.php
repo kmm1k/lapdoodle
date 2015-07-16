@@ -19,7 +19,11 @@ class printing_printpollparts {
         ?>
         <table>
         <?php
-        $dates = explode(",", $poll['dates']);
+        if ($poll['with_dates'] == 1){
+            $dates = explode(",", $poll['dates']);
+        } else {
+            $dates = unserialize($poll['custom']);
+        }
         $this->printJoinedUsers($poll);
         $number = 0;
         ?>

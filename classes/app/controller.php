@@ -30,7 +30,13 @@ class app_controller {
         $pollPrinter = new printing_printoutpolls();
 
         if (isset($_POST['make_poll'])) {
-            $this->makeNewPoll();
+            if (ADMIN_CAN_MAKE_POLLS) {
+                if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) {
+                    $this->makeNewPoll();
+                }
+            } else {
+                $this->makeNewPoll();
+            }
         }
         if (isset($_POST['poll_id'])) {
             $this->getPostPollId();
@@ -44,7 +50,13 @@ class app_controller {
             new app_pollpage();
         }else{
             $pollPrinter->printPoll($pollsData);
-            new printing_pollform();
+            if (ADMIN_CAN_MAKE_POLLS) {
+                if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) {
+                    new printing_pollform();
+                }
+            } else {
+                new printing_pollform();
+            }
         }
         print_r(app_controller::$err->getErrors());
     }

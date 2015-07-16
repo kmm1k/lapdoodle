@@ -82,8 +82,8 @@
             <file leaf-file-name="printaddtopollbutton.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/classes/printing/printaddtopollbutton.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.319337" vertical-offset="0" max-vertical-offset="905">
-                    <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
+                  <state vertical-scroll-proportion="0.41325966" vertical-offset="0" max-vertical-offset="905">
+                    <caret line="27" column="49" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="49" />
                     <folding />
                   </state>
                 </provider>
@@ -92,8 +92,8 @@
             <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/includes/init.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="646">
-                    <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+                  <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="646">
+                    <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
                     <folding>
                       <element signature="e#6#82#0#PHP" expanded="true" />
                     </folding>
@@ -105,7 +105,7 @@
               <entry file="file://$PROJECT_DIR$/classes/database/connect.php">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="663">
-                    <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+                    <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
                     <folding />
                   </state>
                 </provider>
@@ -134,11 +134,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="pollpage.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="pollpage.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/app/pollpage.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.61445785" vertical-offset="0" max-vertical-offset="1071">
-                  <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+                <state vertical-scroll-proportion="-14.423077" vertical-offset="356" max-vertical-offset="1071">
+                  <caret line="48" column="48" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -150,19 +150,6 @@
                 <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="357">
                   <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="makenewpoll.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/classes/app/makenewpoll.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.8461537" vertical-offset="204" max-vertical-offset="1649">
-                  <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#6#87#0#PHP" expanded="true" />
-                    <marker date="1436962717935" expanded="true" signature="2266:2459" placeholder="insert into ..." />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -182,18 +169,18 @@
           <file leaf-file-name="pollform.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/printing/pollform.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="476">
-                  <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="731">
+                  <caret line="37" column="63" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="63" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="controller.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/classes/app/controller.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.384615" vertical-offset="255" max-vertical-offset="1564">
-                  <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.35843372" vertical-offset="255" max-vertical-offset="1768">
+                  <caret line="34" column="38" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -215,6 +202,28 @@
                 <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="391">
                   <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+                  <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="checkifinpoll.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/database/checkifinpoll.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="374">
+                  <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+                  <folding>
+                    <marker date="1436952237444" expanded="true" signature="110:153" placeholder="SELECT * FRO..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -260,8 +269,8 @@
           <file leaf-file-name="constants.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/constants.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
-                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                <state vertical-scroll-proportion="-26.076923" vertical-offset="291" max-vertical-offset="1224">
+                  <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -280,18 +289,18 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="663">
-                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="663">
+                  <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="printpollparts.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="printpollparts.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/printing/printpollparts.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.7665663" vertical-offset="0" max-vertical-offset="1887">
-                  <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
+                <state vertical-scroll-proportion="-7.1923075" vertical-offset="238" max-vertical-offset="1955">
+                  <caret line="30" column="23" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -310,6 +319,20 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="makenewpoll.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/app/makenewpoll.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.38403615" vertical-offset="527" max-vertical-offset="2108">
+                  <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#6#87#0#PHP" expanded="true" />
+                    <marker date="1437054493969" expanded="true" signature="1679:1892" placeholder="insert into ..." />
+                    <marker date="1437054493969" expanded="true" signature="3534:3727" placeholder="insert into ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="ispersoninpoll.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/session/ispersoninpoll.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -320,21 +343,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="collector.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/classes/errors/collector.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="663">
-                  <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="doodle_javascript.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/javascript/doodle_javascript.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="1377">
-                  <caret line="74" column="3" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2346">
+                  <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -344,10 +357,12 @@
       </split-second>
     </splitter>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/classes/app/makenewpoll.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classes/pollstuff/RemovePersonFromPoll.php" />
         <option value="$PROJECT_DIR$/classes/printing/PrintOutPolls.php" />
         <option value="$PROJECT_DIR$/classes/pollstuff/AddPersonToPoll.php" />
         <option value="$PROJECT_DIR$/classes/pollstuff/MakeNewPoll.php" />
@@ -362,7 +377,6 @@
         <option value="$PROJECT_DIR$/classes/printing/printing_printbackbutton.php" />
         <option value="$PROJECT_DIR$/classes/database/database_selectpolldata.php" />
         <option value="$PROJECT_DIR$/page_parts/nopoll.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/classes/app/Registry.php" />
         <option value="$PROJECT_DIR$/classes/database/checkifinpoll.php" />
         <option value="$PROJECT_DIR$/classes/database/doquery.php" />
@@ -374,9 +388,7 @@
         <option value="$PROJECT_DIR$/classes/printing/printpollparticipants.php" />
         <option value="$PROJECT_DIR$/classes/security/isuseradmin.php" />
         <option value="$PROJECT_DIR$/classes/security/sqlinj.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/init.php" />
-        <option value="$PROJECT_DIR$/classes/database/connect.php" />
         <option value="$PROJECT_DIR$/classes/printing/printing_printaddtopollbutton.php" />
         <option value="$PROJECT_DIR$/page_parts/remove_from_poll_button.php" />
         <option value="$PROJECT_DIR$/classes/printing/printing_removefrompollbutton.php" />
@@ -386,18 +398,22 @@
         <option value="$PROJECT_DIR$/classes/printing/printoutpolls.php" />
         <option value="$PROJECT_DIR$/classes/errors/collector.php" />
         <option value="$PROJECT_DIR$/classes/security/checksp.php" />
-        <option value="$PROJECT_DIR$/classes/app/controller.php" />
-        <option value="$PROJECT_DIR$/javascript/doodle_javascript.js" />
-        <option value="$PROJECT_DIR$/classes/app/makenewpoll.php" />
-        <option value="$PROJECT_DIR$/constants.php" />
-        <option value="$PROJECT_DIR$/classes/printing/printaddtopollbutton.php" />
         <option value="$PROJECT_DIR$/classes/session/ispersoninpoll.php" />
         <option value="$PROJECT_DIR$/classes/app/deletepoll.php" />
         <option value="$PROJECT_DIR$/classes/app/addpersontopoll.php" />
         <option value="$PROJECT_DIR$/classes/database/selectpolldata.php" />
         <option value="$PROJECT_DIR$/classes/app/removepersonfrompoll.php" />
+        <option value="$PROJECT_DIR$/classes/database/connect.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/constants.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/classes/printing/pollform.php" />
+        <option value="$PROJECT_DIR$/classes/app/controller.php" />
         <option value="$PROJECT_DIR$/classes/app/pollpage.php" />
+        <option value="$PROJECT_DIR$/classes/printing/printaddtopollbutton.php" />
         <option value="$PROJECT_DIR$/classes/printing/printpollparts.php" />
+        <option value="$PROJECT_DIR$/javascript/doodle_javascript.js" />
+        <option value="$PROJECT_DIR$/classes/app/makenewpoll.php" />
       </list>
     </option>
   </component>
@@ -498,7 +514,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lapdoodle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lapdoodle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lapdoodle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lapdoodle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -763,7 +807,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -819,14 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="694">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,16 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="646">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <element signature="e#6#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/printing/removefrompollbutton.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="442">
@@ -914,28 +940,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/database/checkifinpoll.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="374">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding>
-            <marker date="1436952237444" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/database/doquery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="391">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/printing/pollform.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="476">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -984,14 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/doodle_javascript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="1377">
-          <caret line="74" column="3" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/database/getmysqlifetcharray.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="357">
@@ -1000,34 +1000,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/app/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="255" max-vertical-offset="1564">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="663">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/database/mysqliquery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="357">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/database/connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="663">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1075,30 +1051,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/session/ispersoninpoll.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="408">
           <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/app/makenewpoll.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="204" max-vertical-offset="1649">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1436962717935" expanded="true" signature="2266:2459" placeholder="insert into ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1143,27 +1100,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/printing/printaddtopollbutton.php">
+    <entry file="file://$PROJECT_DIR$/includes/init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.319337" vertical-offset="0" max-vertical-offset="905">
-          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
+        <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="646">
+          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="663">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/printing/printpollparts.php">
+    <entry file="file://$PROJECT_DIR$/constants.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7665663" vertical-offset="0" max-vertical-offset="1887">
-          <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
+        <state vertical-scroll-proportion="-26.076923" vertical-offset="291" max-vertical-offset="1224">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/database/connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="663">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/printing/pollform.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="731">
+          <caret line="37" column="63" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/database/checkifinpoll.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="374">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding>
+            <marker date="1436952237444" expanded="true" signature="110:153" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/printing/printaddtopollbutton.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41325966" vertical-offset="0" max-vertical-offset="905">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/app/pollpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61445785" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state vertical-scroll-proportion="-14.423077" vertical-offset="356" max-vertical-offset="1071">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/app/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35843372" vertical-offset="255" max-vertical-offset="1768">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/doodle_javascript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2346">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/printing/printpollparts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="238" max-vertical-offset="1955">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/app/makenewpoll.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38403615" vertical-offset="527" max-vertical-offset="2108">
+          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1437054493969" expanded="true" signature="1679:1892" placeholder="insert into ..." />
+            <marker date="1437054493969" expanded="true" signature="3534:3727" placeholder="insert into ..." />
+          </folding>
         </state>
       </provider>
     </entry>

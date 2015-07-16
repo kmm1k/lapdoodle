@@ -22,13 +22,40 @@ class app_makenewpoll {
     }
 
     private function makeNew() {
-        if(empty($_POST['with_dates'])) {
-            $withDates = 0;
-            $this->makeQuery($withDates);
-        } else {
+        if (isset($_POST['with_dates'])) {
             $withDates = 1;
             $this->parseDateOptions($withDates);
+        } else if (isset($_POST['with_custom'])) {
+            $withDates = 2;
+            $this->parseCustomOptions($withDates);
+        } else {
+            $withDates = 0;
+            $this->makeQuery($withDates);
         }
+    }
+
+    /** TODO: koodikordus fixida */
+    private function parseCustomOptions($withDates) {
+        if (empty($_POST['doodle_custom'])) {
+            app_controller::$err->add('post_empty_doodleCustom');
+            return;
+        }
+        $fineDates = "";
+        $custom_strings = $_POST['doodle_custom'];
+        //exit(print_r($custom_strings));
+        $custom_array = json_decode($custom_strings);
+        //exit(print_r($custom_array));
+        $pollname = app_controller::$strcln->esc($_POST['pollname']);
+        $email = app_controller::$strcln->esc($_SESSION[SESSION_EMAIL]);
+        $name = app_controller::$strcln->esc($_SESSION[SESSION_NAME]);
+        $url = $this->makeUrl();
+        $pollStructure = Array();
+        $sPollStructure = serialize($pollStructure);
+        $sCustom = app_controller::$strcln->esc(serialize($custom_array));
+        $query = "insert into tables (table_id, email,
+             name, url, with_dates, dates, poll, custom) values
+             ('$pollname', '$email', '$name', '$url', '$withDates', '$fineDates', '$sPollStructure', '$sCustom');";
+        $this->doQuery->tryQuery($query);
     }
 
     private function parseDateOptions($withDates) {

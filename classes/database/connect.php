@@ -11,10 +11,9 @@ class database_connect
 
     public static function getDb() {
         if (database_connect::$database === false) {
-            database_connect::$database = database_connect::connection();
+            database_connect::$database = database_connect::checkConnection(database_connect::connection());
             echo "i made a connection to the db";
         }
-        database_connect::checkConnection(database_connect::$database);
         return database_connect::$database;
     }
 
@@ -26,8 +25,9 @@ class database_connect
     public static function checkConnection($connection){
 		if($connection->connect_error){
             die("Connection failed: " . $connection->connect_error);
-		}
-		return;
+		} else {
+            return $connection;
+        }
 	}
 	
 }

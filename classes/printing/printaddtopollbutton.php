@@ -19,7 +19,11 @@ class printing_printaddtopollbutton {
             if ($pollData == null){
 
             } else {
-                echo "dates to choose: <br/>";
+                if ($pollData['with_dates'] == 1) {
+                    echo "dates to choose: <br/>";
+                } else if ($pollData['with_dates'] == 2) {
+                    echo "options to choose from: <br/>";
+                }
                 $pollPrinter = new printing_printpollparts($pollData);
                 $pollPrinter->printDatesWithInput($pollData);
             }
