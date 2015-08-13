@@ -23,8 +23,8 @@ class app_makenewpoll {
 
     private function makeNew() {
         if (isset($_POST['with_dates'])) {
-            $withDates = 1;
-            $this->parseDateOptions($withDates);
+            $withDates = 2;
+            $this->parseCustomOptions($withDates);
         } else if (isset($_POST['with_custom'])) {
             $withDates = 2;
             $this->parseCustomOptions($withDates);
@@ -95,11 +95,14 @@ class app_makenewpoll {
         $url = $this->makeUrl();
         $withDates = app_controller::$strcln->esc($withDates);
         $fineDates = app_controller::$strcln->esc($this->fineDates);
+        $pollOption = Array();
+        array_push($pollOption, $pollname);
         $pollStructure = Array();
         $sPollStructure = serialize($pollStructure);
+        $sPollOption = serialize($pollOption);
         $query = "insert into tables (table_id, email,
-             name, url, with_dates, dates, poll) values
-             ('$pollname', '$email', '$name', '$url', '$withDates', '$fineDates', '$sPollStructure');";
+             name, url, with_dates, dates, poll, custom) values
+             ('$pollname', '$email', '$name', '$url', '$withDates', '$fineDates', '$sPollStructure', '$sPollOption');";
 
         $this->doQuery->tryQuery($query);
     }

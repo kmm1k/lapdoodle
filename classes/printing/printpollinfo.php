@@ -15,8 +15,12 @@ class printing_printpollinfo {
         $heading = app_controller::$strcln->pr($poll['table_id']);
         $name = app_controller::$strcln->pr($poll['name']);
         ?>
-        <p>event name:<?php echo $heading ?></p>
-        <p>made by:<?php echo $name ?></p>
+        <div class="page-header">
+            <h1><?php echo $heading ?>
+                <small>made by:<?php echo $name ?></small>
+            </h1>
+        </div>
+
         <?php
     }
 

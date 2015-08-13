@@ -11,6 +11,7 @@ namespace Lapdoodle;
 class app_controller {
 
     public static $db;
+    /* protected db this db =  */
     public static $poll_id;
     public static $strcln;
     public static $err;
@@ -44,7 +45,7 @@ class app_controller {
         if (isset($_GET['poll_id'])) {
             app_controller::$poll_id = app_controller::$strcln->esc($_GET['poll_id']);
         }
-        echo app_controller::$poll_id;
+        //echo app_controller::$poll_id;
         if(isset(app_controller::$poll_id) && isset($_SESSION[SESSION_EMAIL])
             && app_controller::$poll_id != null){
             new app_pollpage();
@@ -81,14 +82,56 @@ class app_controller {
         }
     }
 
+    private function removePerson() {
+        if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) {
+            if (isset($_POST['uname'])) {
+                $user = app_controller::$strcln->esc($_POST['uname']);
+                new app_removepersonfrompoll($user);
+            }
+        } else {
+            app_controller::$err->add('not_an_admin');
+            return;
+        }
+    }
+
+    private function confirmPoll() {
+        if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) {
+            new app_confirmPollStuff();
+        } else {
+            app_controller::$err->add('not_an_admin');
+            return;
+        }
+    }
+
+    private function adminAddPerson() {
+        if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) {
+            /* TODO: all the hard stuff */
+            new app_adminaddperson();
+        } else {
+            app_controller::$err->add('not_an_admin');
+            return;
+        }
+    }
+
     private function getPostPollId() {
         if (isset($_POST['post_type'])) {
             if ($_POST['post_type'] == "delete") {
-                new app_removepersonfrompoll();
+                if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) {
+                    new app_removepersonfrompoll(app_controller::$strcln->esc(
+                        $_POST['user']));
+                } else {
+                    new app_removepersonfrompoll();
+                }
             } else if ($_POST['post_type'] == "add") {
                 new app_addpersontopoll();
             } else if ($_POST['post_type'] == "delete_poll") {
                 $this->deletePoll();
+            } else if ($_POST['post_type'] == "remove_person") {
+                $this->removePerson();
+            } else if ($_POST['post_type'] == "confirm_poll") {
+                $this->confirmPoll();
+            } else if ($_POST['post_type'] == "admin_add_person") {
+                $this->adminAddPerson();
             }
             if (app_controller::$poll_id == null && $_POST['post_type'] == "delete") {
 

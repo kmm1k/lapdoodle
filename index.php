@@ -16,8 +16,10 @@ include_once("constants.php");
 /* TODO session name constants! */
 $_SESSION[SESSION_EMAIL] = "kmmiil95@gmail.com";
 $_SESSION[SESSION_NAME] = "Karl-Martin Miil";
+//$_SESSION[SESSION_EMAIL] = "kmm1k@kmm.com";
+//$_SESSION[SESSION_NAME] = "lammas";
 /* If you want to be admin of the page */
-$_SESSION[SESSION_ADMIN] = FALSE;
+$_SESSION[SESSION_ADMIN] = TRUE;
 
 /* include javascript and css files*/
 include_once(FOLDER . "/includes/header_scripts.php");

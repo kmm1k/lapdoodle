@@ -39,7 +39,7 @@ define("SESSION_ADMIN", "admin");
  * 0 = is not admin of the site
  * then you should set ADMIN_DECLARATION to 1
  */
-define("ADMIN_DECLARATION", TRUE);
+define("ADMIN_DECLARATION", FALSE);
 
 
   /** ------------- */
@@ -54,6 +54,9 @@ define("POLLS_WITH_CUSTOM_DATA", TRUE);
 
 /** if you want to make polls with dates */
 define("POLLS_WITH_DATES", TRUE);
+
+/** if admin can add people to polls */
+define("ADMIN_CAN_ADD_PEOPLE", TRUE);
 
 
   /** ------------------- */

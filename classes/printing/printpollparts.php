@@ -1,115 +1,155 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kmmii
- * Date: 04.07.2015
- * Time: 13:24
- */
-
 namespace Lapdoodle;
+
 
 class printing_printpollparts {
 
-
-    function printDatesWithInput($poll) {
-        $this->printPollWithDates($poll, TRUE);
-    }
-
-    function printPollWithDates($poll, $withInput = FALSE) {
+    public function __construct($poll, $isInPoll, $with_dates, $isAdmin) {
         ?>
-        <table>
-        <?php
-        if ($poll['with_dates'] == 1){
-            $dates = explode(",", $poll['dates']);
-        } else {
-            $dates = unserialize($poll['custom']);
-        }
-        $this->printJoinedUsers($poll);
-        $number = 0;
-        ?>
-        <?php
-        foreach ($dates as $date) {
-            $number++;
-            $date = app_controller::$strcln->pr($date);
+        <div class="table-responsive">
+        <form class="forms" action="" method="POST">
+        <table class="poll-table table table-bordered">
+            <?php
+            $this->printOptions($poll, $isAdmin);
+            $this->printUsers($poll, $isAdmin);
+            if (!$isAdmin) {
+                if (!$isInPoll) {
+                    $this->printUser($poll);
+                    ?>
+                    <tr>
+                        <td>
+                            <?php
+                            new printing_printaddtopollbutton();
+                            ?>
+                        </td>
+                    </tr>
+                <?php
+                } else {
+                    new printing_removefrompollbutton();
+                }
+            } else {
             ?>
             <tr>
                 <td>
                     <?php
-                    echo $date;
-                    if ($withInput) {
-                        ?>
-                        <input added_date="<?php echo $date; ?>"
-                               class="joining-image" type="checkbox"
-                               value="<?php echo $date; ?>">
-                        <?php
-                    }
+                new printing_printconfirmbutton();
                     ?>
-                    <br/>
                 </td>
-                <td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+        </form>
+        </div>
+        <?php
+        if ($isAdmin && ADMIN_CAN_ADD_PEOPLE === TRUE) {
+            //new printing_printadminaddpersonform();
+        }
+    }
+
+    function printOptions($poll, $isAdmin) {
+        $options = unserialize($poll['custom']);
+        $count = 0;
+        ?>
+            <tr>
+                <th>
+                    user
+                </th>
                 <?php
-                $uPollData = unserialize($poll['poll']);
-                foreach ($uPollData as $data) {
-                    foreach ($data[0] as $joinedDate) {
-                        if ($joinedDate == $date){
-                            echo "v";
-                        }
+                foreach ($options as $option) {
+                    if ($isAdmin) {
+                        echo '<th><input type="text" name="option'.$count.'" value="'.$option.'"></th>';
+                    } else {
+                        echo '<th>'.$option.'</th>';
                     }
+                    $count++;
+                }
+                if ($isAdmin) {
+                    echo '<th><input type="text" name="option'.$count.'" value="" placeholder="add new"></th>';
                 }
                 ?>
-                </td>
             </tr>
-            <?php
-            }
-            ?>
-        </table>
-    <?php
+        <?php
+        return $count;
     }
 
-
-    function printJoinedUsers($poll) {
-        $uPollData = unserialize($poll['poll']);
-        if (count($uPollData) > 0) {
+    function printUsers($poll, $isAdmin) {
+        $users = unserialize($poll['poll']);
+        $options = unserialize($poll['custom']);
+        $col = 0;
+        foreach ($users as $user) {
+            $col++;
             ?>
             <tr>
-                <td> dates: </td>
-            <?php
-            foreach ($uPollData as $user) {
-                ?>
                 <td>
                     <?php
+                    if ($isAdmin) {
+                        ?>
+                        <input type="checkbox" name="user_<?php echo $col; ?>" value="<?php echo $user['email']; ?>">
+                        <?php
+                    }
                     echo $user['name'];
                     ?>
                 </td>
                 <?php
-            }
-            ?>
+                $number = 0;
+                foreach ($options as $option) {
+                    echo '<td>';
+                    if ($isAdmin) {
+                        $number++;
+                        if ($this->isPartOfOption($option, $user)) {
+                            echo '<input type="checkbox" value="'.$option.'" name="usr_'.$col.'_'.$number.'" checked>';
+                        } else {
+                            echo '<input type="checkbox" value="'.$option.'" name="usr_'.$col.'_'.$number.'">';
+                        }
+                    } else {
+                        if ($this->isPartOfOption($option, $user)) {
+                            echo 'X';
+                        } else {
+                            echo '';
+                        }
+                    }
+                    echo '</td>';
+                }
+                ?>
             </tr>
-            <?php
+        <?php
         }
     }
 
-    function printPoll($poll) {
-        $uPollData = unserialize($poll['poll']);
-        ?>
-        <table>
-            <th>people joined:</th>
-            <?php
-            foreach ($uPollData as $user) {
-                ?>
-                <tr>
-                    <td>
-                    <?php
-                    echo $user['name'];
-                    ?>
-                    </td>
-                </tr>
-            <?php
+    function isPartOfOption($option, $user) {
+            foreach ($user[0] as $userOption) {
+                if ($userOption === $option) {
+                    return true;
+                }
             }
+            return false;
+    }
+
+    function printUser($poll) {
+        $options = unserialize($poll['custom']);
+        ?>
+        <tr>
+            <td>
+            <?php
+            echo $_SESSION['name'];
             ?>
-        </table>
+            </td>
+            <?php
+
+                foreach ($options as $option) {
+                    ?>
+                    <td>
+                        <input added_date="<?php echo $option; ?>" class="joining-image" type="checkbox" value="<?php echo $option; ?>">
+                    </td>
+                    <?php
+                }
+
+            ?>
+        </tr>
         <?php
     }
 
-
 }
+

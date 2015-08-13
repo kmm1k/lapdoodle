@@ -55,7 +55,7 @@ class app_addpersontopoll {
             //exit(print_r($pollData));
             $pollData = serialize($pollData);
 
-            $query = "UPDATE tables SET poll='$pollData'";
+            $query = "UPDATE tables SET poll='$pollData' WHERE url='$poll_id'";
             $this->doQuery->tryQuery($query);
         }
     }

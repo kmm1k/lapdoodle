@@ -1,19 +1,34 @@
 var countCustomInputs = 0;
 var custom_to_add = new Array();
+var value = "";
 $('.date').datepicker({
 	clearBtn: true,
     multidate: true,
 	language: "et",
 	todayBtn: "linked",
 	orientation: "bottom auto",
-	toggleActive: true
+	toggleActive: true,
+    format: 'dd.mm.yyyy'
+}).on('changeDate', function(e){
+    var value = $('.date').datepicker('getDates');
+    var formatedSelectedDates = [];
+    for(var date in value)
+    {
+        formatedSelectedDates.push(convertDate(value[date]));
+    }
+    $('#doodle_custom').val(JSON.stringify(formatedSelectedDates));
 });
+
+function convertDate(d) {
+    function pad(s) { return (s < 10) ? '0' + s : s; }
+    return [pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('-');
+}
 
 $('#doodle_checkbox').click(function(){
     var dateDataRefresher;
 	if ($('#doodle_checkbox').is(':checked')) {
 		$('.dates_poll').show();
-        dateDataRefresher = setInterval(updatePollInputDates, 500);
+        //dateDataRefresher = setInterval(updatePollInputDates, 500);
 	} else {
 		$('.dates_poll').hide();
         clearInterval(dateDataRefresher);
@@ -40,7 +55,7 @@ function updatePollInputCustom() {
         if ($('.custom_polls'+':eq('+(countCustomInputs-1)+')').val() != "") {
                 countCustomInputs++;
             $('#make_new_poll_button').append(
-                '<input class="custom_polls" id="custom_poll_' +
+                '<input class="custom_polls col-xs-12" placeholder="Enter poll option" id="custom_poll_' +
                 countCustomInputs +
                 '" type="text" value="">'
             );
@@ -57,7 +72,7 @@ function updatePollInputCustom() {
     } else {
         countCustomInputs++;
         $('#make_new_poll_button').append(
-            '<input class="custom_polls" id="custom_poll_' +
+            '<input class="custom_polls col-xs-12" placeholder="Enter poll option" id="custom_poll_' +
             countCustomInputs +
             '" type="text"  value="">'
         );
@@ -76,8 +91,8 @@ function makeCustomOptionsArray() {
 }
 
 function updatePollInputDates() {
-	var value = $(".dates_poll").datepicker("getDates");
-	$('#doodle_dates').val(value);
+	var value = $(".date").datepicker("getDates");
+	$('#doodle_custom').val(JSON.stringify(value));
 }
 
 $('.joining-image').click(function(){
@@ -111,6 +126,8 @@ function remove_item(array, date) {
 	}
     return array;
 }
+
+
 
 /**
 $(".forms").submit(function(event) {

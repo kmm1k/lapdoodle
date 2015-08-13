@@ -15,7 +15,7 @@ class printing_printbackbutton {
             echo '<a href="?"><button> back </button></a>';
         } else {
             echo '<form id="go_back_to_polls" class="forms">
-                    <input type="submit" value="go back to polls">
+                    <input type="submit" class="customButton"  value="go back to polls">
                 </form>';
         }
     }

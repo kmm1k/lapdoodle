@@ -35,29 +35,13 @@ class app_pollpage {
         $this->usersInPoll = unserialize($poll['poll']);
     }
     private function isPersonInPoll($with_dates, $poll) {
+        $isAdmin = FALSE;
+        if ($_SESSION[SESSION_ADMIN] == ADMIN_DECLARATION) $isAdmin = TRUE;
         $isPersonInPoll = new session_ispersoninpoll();
         $user = $_SESSION[SESSION_EMAIL];
         $isInPoll = $isPersonInPoll->isInPoll($this->usersInPoll, $user);
 //new printing_printaddtopollbutton($isInPoll, $poll, $with_dates, $this->usersInPoll);
-        $pollPrinter = new printing_printpollparts($poll);
-        if ($isInPoll) {
-            if ($with_dates == 0) {
-                /** print users who are in poll without dates poll */
-                $pollPrinter->printPoll($poll);
-            } else {
-                /** print users who are in poll with dates poll */
-                $pollPrinter->printPollWithDates($poll);
-            }
-            new printing_removefrompollbutton();
-        } else {
-            if ($with_dates == 0) {
-                $pollPrinter->printPoll($poll);
-                new printing_printaddtopollbutton();
-            } else {
-                //exit(print_r($this->usersInPoll));
-                new printing_printaddtopollbutton($poll);
-            }
-        }
+        new printing_printpollparts($poll, $isInPoll, $with_dates, $isAdmin);
     }
 
 }

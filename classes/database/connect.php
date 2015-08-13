@@ -12,7 +12,7 @@ class database_connect
     public static function getDb() {
         if (database_connect::$database === false) {
             database_connect::$database = database_connect::checkConnection(database_connect::connection());
-            echo "i made a connection to the db";
+            //echo "i made a connection to the db";
         }
         return database_connect::$database;
     }
